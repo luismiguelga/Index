@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema veterinario2</title>
+  <link rel="stylesheet" href="./estilos2.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+</head>
+
+<body>
+  <div id="x">
+    <button id="c-c" onclick="crear()" style="margin: 20px 0px;" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      Crear cita</button>
+    <a href="./index.html"><button id="bv">Volver al inicio</button></a>
+    <h1 id="titulo">Sistema de citas </h1>
+    <h2 id="titulo2">Veteneria Love pets </h2>
+    <img id="imagenh" src="./imagenes/huella.png" alt="">
+    <img id="Red" alt="" src="./imagenes/ig-logo.png">
+    <img id="Red" alt="" src="./imagenes/Facel.png">
+    <img id="Red" alt="" src="./imagenes/Whats.png">
+    <h3 id="info">Veterinarialove@gmail.com </h3>
+    <h3 id="info1">+57 3046777722</h3>
+  </div>
+  <div id="imgfondo"> <img id="imghuella" src="./imagenes/huellasp.png">
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Nuevo registro</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <h4 id="Alerta9"></h4>
+            <label for="">Nombre mascota</label><input type="text" id="nombrem">
+            <h4 id="Alerta1"></h4>
+            <label for="">Nombre propietario</label><input type="text" id="nombrep">
+            <h4 id="Alerta2"></h4>
+            <label for="">Telefono</label><input type="number" id="telefono">
+            <h4 id="Alerta4"></h4>
+            <label for="">Fecha</label><input type="date" id="Fecha">
+            <h4 id="Alerta5"></h4>
+            <label for="">Hora</label><input type="time" id="Hora">
+            <h4 id="Alerta6"></h4>
+            <label for="">Tipo</label id="Tipo">
+            <select id="Tipo">
+              <option value=""></option>
+              <option value="Pez">Pez</option>
+              <option value="Perro">Perro</option>
+              <option value="Gato">Gato</option>
+              <option value="Ganado">Ganado</option>
+              <option value="Ave">Ave</option>
+            </select>
+            <h4 id="Alerta8"></h4>
+            <label for="">Sintoma</label><textarea name="" id="Sintoma" cols="30" rows="10"></textarea>
+            <h4 id="Alerta7"></h4>
+            <label for="">Estado</label id="Estado">
+            <select id="Estado">
+              <option value="Activo">Activo</option>
+              <option value="Inactivo">Inactivo</option>
+              <option value="Desactivado">Desactivado</option>
+            </select>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button onclick="if (validar()) crearCita()" type="button" class="btn btn-primary" id="boto">Crear
+              cita</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="divg">
+    <div id="cajasfiltro">
+      <!-- <button type="button" id="bfiltrar">Filtrar</button> -->
+      <div id="mover">
+        <input type="checkbox" id="activas" class="tarjeta" name="check">Abiertas
+        <input type="checkbox" id="anuladas" class="tarjeta" name="check">Cerradas
+        <!-- <label for=""><input type="checkbox" id="anuladas" class="tarjeta" name="check"> Anuladas</label>
+        <label for=""><input type="checkbox" id="activas" class="tarjeta" name="check">Abiertas</label>
+        <label for=""><input type="checkbox" id="anuladas" class="tarjeta" name="check">Cerradas</label> -->
+        <input type="checkbox" id="anuladas" class="tarjeta" name="check">Anuladas
+      </div>
+    </div>
+    <div id="c-tarjetas"></div>
+  </div>
+  </div>
+</body>
+
+
+<script>
+  let bd = null
+  document.addEventListener("DOMContentLoaded", () => {
+    pintar()
+  })
+  function crear() {
+    bd = 0
+    document.getElementById("id").value = c = c + 1
+  }
+
+
+  function crearCita() {
+    var cardsContainer = document.getElementById("c-tarjetas");
+    var card = document.createElement("div");
+    card.className = "card";
+
+    var imagen = document.createElement("img");
+    if (document.getElementById("Tipo").value == "Pez") {
+      imagen.src = "./imagenes/pez.png";
+    } else if (document.getElementById("Tipo").value == "Perro") {
+      imagen.src = "./imagenes/Perro.png";
+    } else if (document.getElementById("Tipo").value == "Gato") {
+      imagen.src = "./imagenes/Gato.png";
+    } else if (document.getElementById("Tipo").value == "Ganado") {
+      imagen.src = "./imagenes/Ganado.png";
+    } else if (document.getElementById("Tipo").value == "Ave") {
+      imagen.src = "./imagenes/Ave.png";
+    }
+
+    var nombre = document.createElement("h2");
+    nombre.textContent = document.getElementById("nombrem").value;
+
+    var propietario = document.createElement("p");
+    propietario.innerHTML = "<strong>Propietario:</strong> " + document.getElementById("nombrep").value;
+
+    var telefono = document.createElement("p");
+    telefono.innerHTML = "<strong>Teléfono:</strong> " + document.getElementById("telefono").value;
+
+    var fecha = document.createElement("p");
+    fecha.innerHTML = "<strong>Fecha:</strong> " + document.getElementById("Fecha").value;
+
+    var hora = document.createElement("p");
+    hora.innerHTML = "<strong>Hora:</strong> " + document.getElementById("Hora").value;
+
+    var tipoSeleccionado = document.getElementById("Tipo").value;
+    var tipoSeleccionadoElement = document.createElement("p");
+    tipoSeleccionadoElement.innerHTML = "<strong>Tipo:</strong> " + tipoSeleccionado;
+
+    var sintomas = document.createElement("p");
+    sintomas.innerHTML = "<strong>Síntomas:</strong> " + document.getElementById("Sintoma").value;
+
+    var estadoseleccionado = document.getElementById("Estado").value;
+    var estadoseleccionadoElement = document.createElement("p");
+    estadoseleccionadoElement.innerHTML = "<strong>Estado:</strong> " + estadoseleccionado;
+
+
+
+    var modificar = document.createElement("button");
+    modificar.innerHTML = "Editar informacion✍️";
+    modificar.id = "Beditar";
+
+
+    var eliminar = document.createElement("button");
+    eliminar.innerHTML = "Eliminar🚮";
+    eliminar.id = "Beliminar";
+    eliminar.setAttribute("data-bs-toggle", "modal");
+    eliminar.setAttribute("data-bs-target", "#confirmModal");
+
+    card.appendChild(imagen);
+    card.appendChild(nombre);
+    card.appendChild(propietario);
+    card.appendChild(telefono);
+    card.appendChild(fecha);
+    card.appendChild(hora);
+    card.appendChild(tipoSeleccionadoElement);
+    card.appendChild(sintomas);
+    card.appendChild(estadoseleccionadoElement);
+    card.appendChild(modificar);
+    card.appendChild(eliminar);
+    cardsContainer.appendChild(card);
+  }
+
+
+
+  function validar() {
+    let validacion = true;
+
+    let hora = document.getElementById("Hora").value;
+    let Hmi = new Date();
+    Hmi.setHours(6, 0, 0); // Establece la hora mínima a las 6 am
+
+    let Hma = new Date();
+    Hma.setHours(18, 0, 0); // Establece la hora máxima a las 6 pm
+
+    let Hsel = new Date();
+    Hsel.setHours(parseInt(hora.split(":")[0]), parseInt(hora.split(":")[1]), 0);
+
+
+    let fecha = new Date(document.getElementById("Fecha").value.trim());
+
+    let FA = new Date();
+
+
+    let DS = fecha.getDay();
+
+
+    let DA = new Date().getDay();
+
+
+
+    if (hora.trim() === "") {
+      setTimeout(function () {
+        document.getElementById("Alerta6").textContent = "La hora no esta especificada";
+        setTimeout(function () {
+          document.getElementById("Alerta6").textContent = "";
+        }, 99500);
+      });
+      validacion = false;
+    } else if (Hsel < Hmi || Hsel > Hma) {
+      setTimeout(function () {
+        document.getElementById("Alerta6").textContent = "Seleccione una hora de trabajo habil";
+        setTimeout(function () {
+          document.getElementById("Alerta6").textContent = "";
+        }, 99500);
+      });
+      validacion = false;
+    }
+
+    if (new Date(fecha) <= FA || DS === 6 || DS === FA) {
+      setTimeout(function () {
+        document.getElementById("Alerta5").textContent = "Seleccione un dia de trabajo habil";
+
+        setTimeout(function () {
+          document.getElementById("Alerta5").textContent = "";
+        }, 99500);
+      });
+    }
+
+    if (document.getElementById("nombrem").value.trim() === "") {
+      document.getElementById("Alerta1").textContent = "Cual es el nombre de su mascota";
+      validacion = false;
+    } else {
+      document.getElementById("Alerta1").textContent = "";
+    }
+
+    if (document.getElementById("nombrep").value.trim() === "") {
+      document.getElementById("Alerta2").textContent = "Cual es su nombre";
+      validacion = false;
+    } else {
+      document.getElementById("Alerta2").textContent = "";
+    }
+
+    if (document.getElementById("Fecha").value.trim() === "") {
+      document.getElementById("Alerta5").textContent = "La fecha no esta especificada";
+      validacion = false;
+    } else {
+      document.getElementById("Alerta5").textContent = "";
+    }
+
+    if (document.getElementById("telefono").value.trim() === "") {
+      document.getElementById("Alerta4").textContent = "Ingrese un numero de telefono";
+      validacion = false;
+    } else {
+      document.getElementById("Alerta4").textContent = "";
+    }
+    if (document.getElementById("Hora").value.trim() === "") {
+      document.getElementById("Alerta6").textContent = "Ingrese una hora para su cita";
+      validacion = false;
+    } else {
+      document.getElementById("Alerta6").textContent = "";
+    }
+
+    if (document.getElementById("Tipo").value.trim() === "") {
+      document.getElementById("Alerta8").textContent = "Seleccione un animal entre las opcines";
+      validacion = false;
+    } else {
+      document.getElementById("Alerta8").textContent = "";
+    }
+
+    if (document.getElementById("Sintoma").value.trim() === "") {
+      document.getElementById("Alerta7").textContent = "Diga cuales son los sintomas";
+      validacion = false;
+    } else {
+      document.getElementById("Alerta7").textContent = "";
+      document.getElementById("Alerta9").textContent = "Creado exitosamente"
+    }
+    return validacion;
+  }
+
+  function editarCita(event) {
+    var tarjeta = event.target.closest(".card");
+
+    var nombreMascota = tarjeta.querySelector("h2").textContent;
+    var propietario = tarjeta.querySelector("p:nth-child(3)").textContent.replace("Propietario: ", "");
+    var telefono = tarjeta.querySelector("p:nth-child(4)").textContent.replace("Teléfono: ", "");
+    var fecha = tarjeta.querySelector("p:nth-child(5)").textContent.replace("Fecha: ", "");
+    var hora = tarjeta.querySelector("p:nth-child(6)").textContent.replace("Hora: ", "");
+    var animal = tarjeta.querySelector("p:nth-child(7)").textContent.replace("Animal: ", "");
+    var sintomas = tarjeta.querySelector("p:nth-child(8)").textContent.replace("Síntomas: ", "");
+    var Ecita = tarjeta.querySelector("p:nth-child(9)").textContent.replace("Ecita: ", "");
+
+
+
+    document.getElementById("nombremascota").value = nombreMascota;
+    document.getElementById("propietario").value = propietario;
+    document.getElementById("telefono").value = telefono;
+    document.getElementById("fecha").value = fecha;
+    document.getElementById("hora").value = hora;
+    document.getElementById("tipo").value = animal;
+    document.getElementById("sin").value = sintomas;
+    document.getElementById("Estado").value = Ecita;
+
+    citaModificadaIndex = Array.from(tarjeta.parentNode.children).indexOf(tarjeta);
+  }
+  var modificar = document.createElement("button");
+  modificar.innerHTML = "Modificar";
+  modificar.id = "BT1";
+  modificar.setAttribute("data-bs-toggle", "modal");
+  modificar.setAttribute("data-bs-target", "#exampleModal");
+  modificar.addEventListener("click", function (event) {
+    editarCita(event);
+  });
+
+
+  var bfiltrar = document.getElementById('bfiltrar')
+  var check = document.querySelectorAll('boto')
+
+  document.getElementById("filtro-activadas").addEventListener("change", aplicarFiltro);
+
+// function aplicarFiltro() {
+//   const mostrarActivadas = document.getElementById("activas").checked;
+//   const tarjetas = document.getElementsByClassName("card");
+
+//   for (let i = 0; i < tarjetas.length; i++) {
+//     const tarjeta = tarjetas[i];
+//     const estadoElement = tarjeta.querySelector("p:nth-child(9)");
+
+//     if (mostrarActivadas && estadoElement.innerHTML.includes("Activo")) {
+//       tarjeta.style.display = "block"; // Mostrar tarjeta si está activada y el filtro está activo
+//     } else if (!mostrarActivadas) {
+//       tarjeta.style.display = "block"; // Mostrar todas las tarjetas si el filtro está desactivado
+//     } else {
+//       tarjeta.style.display = "none"; // Ocultar tarjeta si está desactivada y el filtro está activo
+//     }
+//   }
+// }
+
+
+
+
+
+</script>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>

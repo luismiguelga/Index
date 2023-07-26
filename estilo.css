@@ -1,0 +1,166 @@
+body {
+  margin: 0%;
+  
+}
+
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background-image: url("./imagenes/Fondo_Formu.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+/* checkbox */
+
+#x {
+  background-color: rgb(81, 81, 253);
+  height: 150px;
+  margin-bottom: 25px;
+
+}
+
+#c-c {
+  position: relative;
+  left: 520px;
+  top: -370px;
+  height: 50px;
+  width: 200px;
+  background-color: rgb(191, 0, 255);
+  border-radius: 30px;
+  font-weight: 900;
+  font-size: 5mm;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+#Red {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  left: 1500px;
+  top: -79px;
+  margin: 12px;
+}
+
+#titulo {
+  position: relative;
+  top: 45px;
+  color: rgb(0, 0, 0);
+  left: 30px;
+  width: 500px;
+}
+
+#titulo2 {
+  position: relative;
+  left: 1250px;
+  width: 300px;
+  color: rgb(255, 255, 255);
+  margin: 0%;
+  top: -30px;
+}
+
+#img-etc {
+  position: relative;
+  left: 410px;
+  width: 50%;
+  height: 600px;
+  top: -360px;
+  background-color: rgba(149, 0, 255, 0.458);
+  border-radius: 10%;
+}
+
+#imagenh {
+  transform: rotate(40deg);
+  position: relative;
+  top: -55px;
+  left: 350px;
+  height: 60px;
+  width: 60px;
+}
+
+#imagenp {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  height: 600px;
+  border-radius: 10%;
+}
+
+
+#imgfondo {
+  background-image: url("./imagenes/huellasp.png")
+}
+
+#info {
+  color: white;
+  position: relative;
+  left: 1250px;
+  top: -50px;
+  font-size: 6mm;
+  width: 300px;
+}
+
+#info1 {
+  color: white;
+  position: relative;
+  left: 1550px;
+  top: -85px;
+  font-size: 6mm;
+  width: 300px;
+}
+
+
+.card {
+  border: 7px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#cards-container {
+  display: flex;
+}
+
+
+#Beditar {
+  background-color: rgba(0, 174, 255, 0.582);
+  font-weight: bolder;
+  width: 120px;
+  border-radius: 5px;
+}
+
+#Beliminar {
+  background-color: rgb(255, 89, 0);
+  font-weight: bolder;
+  width: 120px;
+  height: 60px;
+  position: absolute;
+  left: 150px;
+  top: 465px;
+  border-radius: 5px;
+}
+
+#Alerta1,
+#Alerta2,
+#Alerta4,
+#Alerta5,
+#Alerta6,
+#Alerta7,
+#Alerta8 {
+  color: red;
+}
+
+#Alerta9 {
+  color: rgb(50, 144, 50)
+}

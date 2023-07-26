@@ -1,0 +1,221 @@
+body {
+  margin: 0%;
+
+  background-image: url("./imagenes/huellasp.png");
+  background-repeat: repeat
+}
+
+.modal-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  background-image: url("./imagenes/Fondo_Formu.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+ 
+}
+/* checkbox */
+
+
+#x {
+  background-color: rgb(81, 81, 253);
+  height: 150px;
+  margin-bottom: 25px;
+  z-index: 4;
+}
+
+#c-c {
+  position: relative;
+  height: 50px;
+  width: 200px;
+  top: 5px;
+  left: 70px;
+  background-color: rgba(0, 72, 255, 0.716);
+  border-radius: 30px;
+  font-weight: 900;
+  font-size: 5mm;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+#c-c:hover{
+  background-color: black;
+  }
+
+#bv{
+  position: relative;
+  height: 50px;
+  width: 200px;
+  top: 70px;
+  right: 130px;
+  border-radius: 30px;
+  background-color: rgba(0, 72, 255, 0.716);
+  border-radius: 30px;
+  font-weight: 900;
+  font-size: 5mm;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: rgb(255, 255, 255);
+}
+#bv:hover{
+background-color: black;
+}
+
+#Red {
+  height: 40px;
+  width: 40px;
+  position: relative;
+  left: 1250px;
+  top: -125px;
+  margin: 12px;
+}
+
+#titulo {
+  position: relative;
+  top: -75px;
+  color: rgb(0, 0, 0);
+  left: 620px;
+  width: 500px;
+  
+}
+
+#titulo2 {
+  position: relative;
+  left: 1000px;
+  width: 300px;
+  color: rgb(255, 255, 255);
+  margin: 0%;
+  top: -120px;
+}
+
+
+#imagenh {
+  transform: rotate(40deg);
+  position: relative;
+  top: -110px;
+  left: 725px;
+  height: 60px;
+  width: 60px;
+}
+
+#imagenp {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  width: 100%;
+  height: 600px;
+  border-radius: 10%;
+}
+#divg{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: space-around;
+  height: 500px;
+  padding: 0px 90px;
+  gap: 35px;
+  position: relative;
+  top: -300px;
+}
+
+#c-tarjetas {
+  background-color: rgba(0, 89, 255, 0.806);
+  border-radius: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+  justify-content: space-around;
+} 
+
+
+#info {
+  color: white;
+  position: relative;
+  left: 1000px;
+  top: -170px;
+  font-size: 6mm;
+  width: 300px;
+}
+
+#info1 {
+  color: white;
+  position: relative;
+  left: 1000px;
+  top: -165px;
+  font-size: 6mm;
+  width: 300px;
+}
+
+
+.card {
+  border: 7px solid #000000;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  width: 300px;
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#cards-container {
+  display: flex;
+}
+
+
+#Beditar {
+  background-color: rgba(0, 174, 255, 0.582);
+  font-weight: bolder;
+  width: 120px;
+  border-radius: 5px;
+}
+
+#Beliminar {
+  background-color: rgb(255, 89, 0);
+  font-weight: bolder;
+  width: 120px;
+  height: 60px;
+  position: absolute;
+  left: 150px;
+  top: 500px;
+  border-radius: 5px;
+}
+
+#Alerta1,
+#Alerta2,
+#Alerta4,
+#Alerta5,
+#Alerta6,
+#Alerta7,
+#Alerta8 {
+  color: red;
+}
+
+#Alerta9 {
+  color: rgb(50, 144, 50)
+}
+
+
+#cajasfiltro{
+  background-color: rgba(0, 89, 255, 0.806);
+  border-radius: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 30px;
+  justify-content: space-around;
+  font-size: 2em;
+}
+#mover{
+  position: relative;
+  top: 0px;
+}
+
+#bfiltrar{
+  height: 50px;
+  width: 125px;
+  top: -90;
+  border-radius: 100px;
+  background-color: rgb(200, 0, 255);
+}
